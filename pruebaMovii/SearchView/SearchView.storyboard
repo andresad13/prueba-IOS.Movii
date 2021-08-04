@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View-->
+        <scene sceneID="pfm-MZ-viY">
+            <objects>
+                <viewController storyboardIdentifier="SearchView" id="Js1-Uq-kVa" customClass="SearchView" customModule="pruebaMovii" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oKG-6e-AOH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p1s-Cc-QWa">
+                                <rect key="frame" x="20" y="187" width="374" height="675"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="112" id="ggB-my-CYI">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="112"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ggB-my-CYI" id="Pma-Pl-7Px">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="112"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mzz-gv-GVV">
+                                                    <rect key="frame" x="20" y="11" width="89" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="i4r-fS-rGB"/>
+                                                        <constraint firstAttribute="width" constant="89" id="pCi-MH-S4j"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mS-qi-McS">
+                                                    <rect key="frame" x="166" y="0.0" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5mS-qi-McS" firstAttribute="top" secondItem="Pma-Pl-7Px" secondAttribute="top" id="ISY-dD-4l2"/>
+                                                <constraint firstItem="mzz-gv-GVV" firstAttribute="top" secondItem="Pma-Pl-7Px" secondAttribute="topMargin" id="J5L-za-iq1"/>
+                                                <constraint firstItem="5mS-qi-McS" firstAttribute="centerX" secondItem="Pma-Pl-7Px" secondAttribute="centerX" id="LgS-78-FLT"/>
+                                                <constraint firstItem="mzz-gv-GVV" firstAttribute="leading" secondItem="Pma-Pl-7Px" secondAttribute="leadingMargin" id="e7g-3e-G3n"/>
+                                                <constraint firstItem="mzz-gv-GVV" firstAttribute="leading" secondItem="Pma-Pl-7Px" secondAttribute="leading" constant="20" symbolic="YES" id="sxh-WJ-w4J"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="mzz-gv-GVV" secondAttribute="bottom" id="via-op-KJy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Js1-Uq-kVa" id="ai5-wX-JQN"/>
+                                    <outlet property="delegate" destination="Js1-Uq-kVa" id="ygk-7R-22N"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" prompt="Buscar artista" placeholder="Artista" translatesAutoresizingMaskIntoConstraints="NO" id="uaq-lU-lis">
+                                <rect key="frame" x="20" y="88" width="374" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="rQe-GN-m58"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Js1-Uq-kVa" id="pOx-0p-7S1"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="S8a-5R-GMO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="S8a-5R-GMO" firstAttribute="trailing" secondItem="p1s-Cc-QWa" secondAttribute="trailing" constant="20" id="B14-oM-CHQ"/>
+                            <constraint firstItem="p1s-Cc-QWa" firstAttribute="leading" secondItem="S8a-5R-GMO" secondAttribute="leading" constant="20" id="Ht1-qz-z2P"/>
+                            <constraint firstItem="uaq-lU-lis" firstAttribute="centerX" secondItem="oKG-6e-AOH" secondAttribute="centerX" id="Q6o-vZ-Nu5"/>
+                            <constraint firstItem="p1s-Cc-QWa" firstAttribute="bottom" secondItem="S8a-5R-GMO" secondAttribute="bottom" id="eJz-eV-hIj"/>
+                            <constraint firstItem="uaq-lU-lis" firstAttribute="top" secondItem="S8a-5R-GMO" secondAttribute="top" id="hQg-eu-D2e"/>
+                            <constraint firstItem="p1s-Cc-QWa" firstAttribute="top" secondItem="uaq-lU-lis" secondAttribute="bottom" constant="9" id="j6d-yd-UE5"/>
+                            <constraint firstItem="p1s-Cc-QWa" firstAttribute="centerX" secondItem="oKG-6e-AOH" secondAttribute="centerX" id="sCd-pF-bqH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="408-8b-F12"/>
+                    <connections>
+                        <outlet property="searchBar" destination="uaq-lU-lis" id="dqx-XC-rYb"/>
+                        <outlet property="tableArtist" destination="p1s-Cc-QWa" id="e1J-yU-haI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iA3-gp-N0w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1197.1014492753625" y="158.70535714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rbJ-Th-pHu">
+            <objects>
+                <navigationController storyboardIdentifier="navigation" automaticallyAdjustsScrollViewInsets="NO" id="Lch-Wc-gp3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QMh-er-tkW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Js1-Uq-kVa" kind="relationship" relationship="rootViewController" id="DYW-oi-WCw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1VY-Zn-M3y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="143" y="152"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
